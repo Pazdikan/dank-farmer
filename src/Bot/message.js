@@ -1,5 +1,5 @@
 const { Message, Client } = require('discord.js-selfbot-v13');
-const { sleep, randomInt, randomArray } = require('./functions');
+const { sleep, randomInt, randomArray, realisticMessage } = require('./functions');
 const config = require('./data/config.json');
 
 /**
@@ -67,13 +67,13 @@ module.exports = async (message, client) => {
     if (query.includes("give me")) {
         let gift = query.replace("give me ", "");
 
-        message.channel.sendTyping();
-        await sleep(randomInt(1000, 4000));
-        message.reply(`pls trade ${gift} ${message.author}`)
+        await realisticMessage(`pls trade ${gift} ${message.author}`, {
+            channel: message.channel,
+        })
 
-        message.channel.sendTyping();
-        await sleep(randomInt(3000, 7000));
-        message.reply(randomArray(config.messages.gift));
+        await realisticMessage(randomArray(config.messages.gift), {
+            replyTo: message,
+        })
 
         return;
     }
@@ -81,34 +81,30 @@ module.exports = async (message, client) => {
     if (query.includes("use the command")) {
         let command = query.replace("use the command ", "");
 
-        message.channel.sendTyping();
-        await sleep(randomInt(1000, 4000));
-        message.reply(`${command}`)
+        await realisticMessage(randomArray(config.messages.command), {
+            replyTo: message,
+        })
 
-        message.channel.sendTyping();
-        await sleep(randomInt(1000, 4000));
-        message.reply(randomArray(config.messages.command));
+        await realisticMessage(`${command}`, {
+            replyTo: message,
+        })
 
         return;
     }
 
     if (query.includes("stop") || query.includes("chill")) {
-        message.channel.sendTyping();
-        await sleep(randomInt(1000, 4000));
-        message.reply(`ok`)
+        await realisticMessage(randomArray(config.messages.stop), {
+            replyTo: message,
+        })
 
-        client.isOn = false;
-
-        return;
+        return client.isOn = false;
     }
 
     if (query.includes("work") || query.includes("start")) {
-        message.channel.sendTyping();
-        await sleep(randomInt(1000, 4000));
-        message.reply(`ok`)
+        await realisticMessage(randomArray(config.messages.start), {
+            replyTo: message,
+        })
 
-        client.isOn = true;
-
-        return;
+        return client.isOn = true;
     }
 }
