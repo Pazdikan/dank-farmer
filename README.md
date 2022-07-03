@@ -7,3 +7,5 @@ Not to mention the intervals.
 I wanted to finish this tonight and push this shit publicly so I won't stop until this project is finished.
 
 Right now you'll probably get banned from Discord and blacklisted on Dank Memer.
+
+If you're really intrested in this project you can join my [Discord](https://discord.gg/dXjUapMtsy) to ask some questions or shit on me for this code (which will be fixed, i fucking promise)
