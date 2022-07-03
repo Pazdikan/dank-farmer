@@ -43,7 +43,7 @@ module.exports = async (client) => {
 
     async function deposit() {
         if (!client.isOn) return;
-        await realisticMessage(`pls dep`, { channel });
+        await realisticMessage(`pls dep all`, { channel });
         setInterval(deposit, config.cooldowns.deposit * 1000);
     }
     await deposit();
