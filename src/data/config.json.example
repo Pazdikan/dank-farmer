@@ -1,0 +1,33 @@
+{
+    "account": {
+        "status": {
+            "text": "",
+            "status": "",
+            "emoji": ""
+        }
+    },
+    "permissions": {
+        "use_commands": ["id of the account that can use commands"],
+        "main_account": "id of the account that will get all notifications.",
+        "prefix": "a prefix for 'word' commands, example: 'max' for 'max give me 10k 1 lifesaver'",
+        "channel": "channel id for dank memer, right now it will be better to create a new channel for this"
+    },
+    "cooldowns": {
+        "work": 3610,
+        "search": 30 ,
+        "beg": 40,
+        "pm": 45,
+        "dig": 40,
+        "deposit": 900
+    },
+    "messages": {
+        "comment": "MESSAGES ARE USED TO MAKE THE BOT MORE LIKE A REAL PERSON, IT SHOULD BE USEFUL FOR PUBLIC SERVERS",
+        
+        "gift": ["all good?", "done", "ok", "aight", "alright"],
+        "command": ["why?", "done", "aight", "alright", "yessir"],
+        "died": ["i just fucking died", "i died 😑", "i fucking hate this shit, i died", "i died, ill kill myself irl"]
+    },
+    "commands": {
+        "search": ["sewer", "tree", "dog", "dumpster", "coat", "pocket", "shoe", "who asked", "god's own place", "fridge", "dresser", "pantry", "couch", "laundromat", "discord"]
+    }
+}
