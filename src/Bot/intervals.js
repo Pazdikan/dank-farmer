@@ -16,35 +16,35 @@ module.exports = async (client) => {
     async function search() {
         if (!client.isOn) return;
         await realisticMessage(`pls search`, { channel });
-        setInterval(deposit, config.cooldowns.search * 1000);
+        setTimeout(deposit, config.cooldowns.search * 1000);
     }
     await search();
 
     async function beg() {
         if (!client.isOn) return;
         await realisticMessage(`pls beg`, { channel });
-        setInterval(beg, config.cooldowns.beg * 1000);
+        setTimeout(beg, config.cooldowns.beg * 1000);
     }
     await beg();
 
     async function dig() {
         if (!client.isOn) return;
         await realisticMessage(`pls dig`, { channel });
-        setInterval(dig, config.cooldowns.dig * 1000);
+        setTimeout(dig, config.cooldowns.dig * 1000);
     }
     await dig();
 
     async function postmeme() {
         if (!client.isOn) return;
         await realisticMessage(`pls pm`, { channel });
-        setInterval(postmeme, config.cooldowns.pm * 1000);
+        setTimeout(postmeme, config.cooldowns.pm * 1000);
     }
     await postmeme();
 
     async function deposit() {
         if (!client.isOn) return;
         await realisticMessage(`pls dep all`, { channel });
-        setInterval(deposit, config.cooldowns.deposit * 1000);
+        setTimeout(deposit, config.cooldowns.deposit * 1000);
     }
     await deposit();
 };
