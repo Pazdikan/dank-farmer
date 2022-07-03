@@ -25,14 +25,14 @@ module.exports = {
      * @param {TextChannel} settings.channel
      */
     realisticMessage: async function (string, settings) {
-        if (settings.reply) {
+        if (settings.replyTo) {
             settings.replyTo.channel.sendTyping();
-            await sleep(randomInt(1000, 3000));
+            await module.exports.sleep(module.exports.randomInt(1000, 3000));
             return settings.replyTo.reply(string);
         }
 
         settings.channel.sendTyping();
-        await sleep(randomInt(1000, 3000));
-        return settings.replyTo.reply(string);
+        await module.exports.sleep(module.exports.randomInt(1000, 3000));
+        return settings.channel.send(string);
     },
 };

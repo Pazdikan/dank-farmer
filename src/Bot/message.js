@@ -5,7 +5,7 @@ const {
     randomArray,
     realisticMessage,
 } = require('./functions');
-const config = require('./data/config.json');
+const config = require('../data/config.json');
 
 /**
  * @param {Message} message The message to be processed
@@ -20,6 +20,7 @@ module.exports = async (message, client) => {
     ) {
         if (
             message.embeds[0] &&
+            message.embeds[0].title &&
             message.embeds[0].title == 'Pending Confirmation'
         ) {
             await sleep(randomInt(1000, 2500));

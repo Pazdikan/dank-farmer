@@ -1,6 +1,11 @@
 const { Client } = require('discord.js-selfbot-v13');
-const { sleep, randomInt, randomArray } = require('./functions');
-const config = require('./data/config.json');
+const {
+    sleep,
+    randomInt,
+    randomArray,
+    realisticMessage,
+} = require('./functions');
+const config = require('../data/config.json');
 
 /**
  * @param {Client} client The currently logged in farm account
@@ -8,68 +13,38 @@ const config = require('./data/config.json');
 module.exports = async (client) => {
     let channel = client.channels.cache.get(config.permissions.channel);
 
-    // Search
-    channel.sendTyping();
-    await sleep(randomInt(1000, 4000));
-    channel.send('pls search');
-
-    setInterval(async () => {
+    async function search() {
         if (!client.isOn) return;
+        await realisticMessage(`pls search`, { channel });
+        setInterval(deposit, config.cooldowns.search * 1000);
+    }
+    await search();
 
-        channel.sendTyping();
-        await sleep(randomInt(1000, 4000));
-        channel.send('pls search');
-    }, config.cooldowns.search * 1000);
-
-    // Beg
-    channel.sendTyping();
-    await sleep(randomInt(1000, 4000));
-    channel.send('pls beg');
-
-    setInterval(async () => {
+    async function beg() {
         if (!client.isOn) return;
+        await realisticMessage(`pls beg`, { channel });
+        setInterval(beg, config.cooldowns.beg * 1000);
+    }
+    await beg();
 
-        channel.sendTyping();
-        await sleep(randomInt(1000, 4000));
-        channel.send('pls beg');
-    }, config.cooldowns.beg * 1000);
-
-    // Dig
-    channel.sendTyping();
-    await sleep(randomInt(1000, 4000));
-    channel.send('pls dig');
-
-    setInterval(async () => {
+    async function dig() {
         if (!client.isOn) return;
+        await realisticMessage(`pls dig`, { channel });
+        setInterval(dig, config.cooldowns.dig * 1000);
+    }
+    await dig();
 
-        channel.sendTyping();
-        await sleep(randomInt(1000, 4000));
-        channel.send('pls dig');
-    }, config.cooldowns.dig * 1000);
-
-    // Postmeme
-    channel.sendTyping();
-    await sleep(randomInt(1000, 4000));
-    channel.send('pls pm');
-
-    setInterval(async () => {
+    async function postmeme() {
         if (!client.isOn) return;
+        await realisticMessage(`pls pm`, { channel });
+        setInterval(postmeme, config.cooldowns.pm * 1000);
+    }
+    await postmeme();
 
-        channel.sendTyping();
-        await sleep(randomInt(1000, 4000));
-        channel.send('pls pm');
-    }, config.cooldowns.pm * 1000);
-
-    // Deposit
-    setInterval(async () => {
+    async function deposit() {
         if (!client.isOn) return;
-
-        channel.sendTyping();
-        await sleep(randomInt(1000, 4000));
-        channel.send('pls dep all');
-
-        channel.sendTyping();
-        await sleep(randomInt(2000, 5000));
-        channel.send('pls bal');
-    }, config.cooldowns.deposit * 1000);
+        await realisticMessage(`pls dep`, { channel });
+        setInterval(deposit, config.cooldowns.deposit * 1000);
+    }
+    await deposit();
 };
