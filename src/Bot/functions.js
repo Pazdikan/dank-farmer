@@ -19,10 +19,10 @@ module.exports = {
 
     /**
      *
-     * @param {String} string
-     * @param {Object} settings
-     * @param {Message} settings.replyTo
-     * @param {TextChannel} settings.channel
+     * @param {String} string The message to be sent
+     * @param {Object} settings Message settings
+     * @param {Message} settings.replyTo The message to reply to
+     * @param {TextChannel} settings.channel The channel to send the message to
      */
     realisticMessage: async function (string, settings) {
         if (settings.replyTo) {
