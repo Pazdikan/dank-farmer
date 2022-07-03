@@ -9,15 +9,15 @@ client.on('ready', async () => {
 
     client.isOn = true;
 
-    require("./intervals")(client);
-})
+    require('./intervals')(client);
+});
 
-client.on("messageCreate", async (message) => {
-    require("./message")(message, client);
-})
+client.on('messageCreate', async (message) => {
+    require('./message')(message, client);
+});
 
-process.on('unhandledRejection', error => {
-	console.error('Unhandled promise rejection:', error);
+process.on('unhandledRejection', (error) => {
+    console.error('Unhandled promise rejection:', error);
 });
 
 client.login(process.env.TOKEN);

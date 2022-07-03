@@ -8,74 +8,68 @@ const config = require('./data/config.json');
 module.exports = async (client) => {
     let channel = client.channels.cache.get(config.permissions.channel);
 
-
     // Search
     channel.sendTyping();
     await sleep(randomInt(1000, 4000));
-    channel.send("pls search")
-    
+    channel.send('pls search');
+
     setInterval(async () => {
-        if (!client.isOn)
-            return;
+        if (!client.isOn) return;
 
         channel.sendTyping();
         await sleep(randomInt(1000, 4000));
-        channel.send("pls search")
+        channel.send('pls search');
     }, config.cooldowns.search * 1000);
 
     // Beg
     channel.sendTyping();
     await sleep(randomInt(1000, 4000));
-    channel.send("pls beg")
-    
+    channel.send('pls beg');
+
     setInterval(async () => {
-        if (!client.isOn)
-            return;
+        if (!client.isOn) return;
 
         channel.sendTyping();
         await sleep(randomInt(1000, 4000));
-        channel.send("pls beg")
+        channel.send('pls beg');
     }, config.cooldowns.beg * 1000);
 
     // Dig
     channel.sendTyping();
     await sleep(randomInt(1000, 4000));
-    channel.send("pls dig")
-    
+    channel.send('pls dig');
+
     setInterval(async () => {
-        if (!client.isOn)
-            return;
+        if (!client.isOn) return;
 
         channel.sendTyping();
         await sleep(randomInt(1000, 4000));
-        channel.send("pls dig")
+        channel.send('pls dig');
     }, config.cooldowns.dig * 1000);
 
     // Postmeme
     channel.sendTyping();
     await sleep(randomInt(1000, 4000));
-    channel.send("pls pm")
-    
+    channel.send('pls pm');
+
     setInterval(async () => {
-        if (!client.isOn)
-            return;
+        if (!client.isOn) return;
 
         channel.sendTyping();
         await sleep(randomInt(1000, 4000));
-        channel.send("pls pm")
+        channel.send('pls pm');
     }, config.cooldowns.pm * 1000);
 
     // Deposit
     setInterval(async () => {
-        if (!client.isOn)
-            return;
+        if (!client.isOn) return;
 
         channel.sendTyping();
         await sleep(randomInt(1000, 4000));
-        channel.send("pls dep all")
+        channel.send('pls dep all');
 
         channel.sendTyping();
         await sleep(randomInt(2000, 5000));
-        channel.send("pls bal")
+        channel.send('pls bal');
     }, config.cooldowns.deposit * 1000);
-}
+};
