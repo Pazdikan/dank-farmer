@@ -1,5 +1,5 @@
 const { Client } = require('discord.js-selfbot-v13');
-const config = require('./data/config.json');
+const config = require('../data/config.json');
 const client = new Client();
 
 client.on('ready', async () => {
