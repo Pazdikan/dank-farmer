@@ -25,7 +25,9 @@
         
         "gift": ["all good?", "done", "ok", "aight", "alright"],
         "command": ["why?", "done", "aight", "alright", "yessir"],
-        "died": ["i just fucking died", "i died 😑", "i fucking hate this shit, i died", "i died, ill kill myself irl"]
+        "died": ["i just fucking died", "i died 😑", "i fucking hate this shit, i died", "i died, ill kill myself irl"],
+        "stop": ["aight, i'll take a break", "ok", "aight", "alright"],
+        "start": ["ok", "aight", "alright", "yessir", "👨🏿‍🌾"]
     },
     "commands": {
         "search": ["sewer", "tree", "dog", "dumpster", "coat", "pocket", "shoe", "who asked", "god's own place", "fridge", "dresser", "pantry", "couch", "laundromat", "discord"]
